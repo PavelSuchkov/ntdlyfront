@@ -1,11 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 import Pages from "./pages";
+import GlobalStyle from "../final/components/GlobalStyle";
 
 const App = () => {
-    return (
-        <div>
-           <Pages/>
-        </div>);
+  return (
+    <div>
+      <GlobalStyle />
+      <Pages />
+    </div>);
 };
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById("root"));
