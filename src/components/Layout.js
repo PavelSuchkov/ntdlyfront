@@ -1,6 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
-import { Header } from "./Header";
+import { Head  as Header} from "./Header";
 import { Navigation } from "./Navigation";
 
 export const Layout = ({ children }) => {

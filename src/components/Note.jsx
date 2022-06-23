@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactMarkdown from "react-markdown";
 
 import { format } from "date-fns";
@@ -24,28 +24,7 @@ const UserActions = styled.div`
   margin-left: auto;
 `;
 
-const NoteBlock = styled.div`
-  border: 0.5px solid #bebdbd;
-  border-radius: 4px;
-  min-height: 40px;
-  width: 80%;
-  display: flex;
-  justify-content: space-between;
-`;
-
-const Icon = styled.span`
-  font-size: 30px;
-  cursor: pointer;
-`;
-
-const onSuccess = () => {
-
-}
-
 const Note = ({ note }) => {
-
-  const [editMode, setEditMode] = useState(false);
-
   return (
     <StyledNote>
       <MetaData>
