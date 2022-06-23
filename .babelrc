@@ -1,4 +1,11 @@
 {
   "presets": ["env", "react"],
+  "env": {
+    "development": {
+      "plugins": [["inline-dotenv",{
+        "path": ".env"
+      }]]
+    }
+  },
   "plugins": ["babel-plugin-styled-components", "transform-object-rest-spread"]
 }
