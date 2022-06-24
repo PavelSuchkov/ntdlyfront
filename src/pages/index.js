@@ -1,13 +1,15 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
 import { Home } from "./home";
-import { MyNotes } from "./mynotes";
+import { MyNotes } from "./myNotes";
 import { Favorites } from "./favorites";
 import { Layout } from "../components/Layout";
 import { SignUp } from "./signup";
 import { SignIn } from "./signin";
-import { useQuery, gql } from '@apollo/client';
-import Note from "../../solutions/04-Authentication-State/pages/note";
+import { gql, useQuery } from "@apollo/client";
+import { NewNote } from "./new";
+import { EditNote } from "./edit";
+import { NotePage as Note } from "./notePage";
 
 
 const IS_LOGGED_IN = gql`
@@ -23,6 +25,8 @@ const Pages = () => {
         <Route exact path="/" component={Home} />
         <PrivateRoute path="/mynotes" component={MyNotes} />
         <PrivateRoute path="/favorites" component={Favorites} />
+        <PrivateRoute path="/new" component={NewNote} />
+        <PrivateRoute path="/edit/:id" component={EditNote} />
         <Route path="/note/:id" component={Note} />
         <Route path="/signup" component={SignUp} />
         <Route path="/signin" component={SignIn} />
@@ -46,7 +50,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
         ) : (
           <Redirect
             to={{
-              pathname: '/signin',
+              pathname: "/signin",
               state: { from: props.location }
             }}
           />

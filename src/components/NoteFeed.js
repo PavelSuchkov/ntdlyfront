@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Note from './Note';
+import { Note } from './Note';
 import { Link } from 'react-router-dom';
 
 const NoteWrapper = styled.div`
@@ -11,10 +11,10 @@ const NoteWrapper = styled.div`
   border-bottom: 1px solid #f5f4f0;
 `;
 
-const NoteFeed = ({ notes }) => {
+const NoteFeed = (props) => {
   return (
     <div>
-      {notes.map(note => (
+      {props.notes.map(note => (
         <NoteWrapper key={note.id}>
           <Note note={note} />
           <Link to={`note/${note.id}`}>Permalink</Link>

@@ -1,14 +1,27 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
+import { useQuery } from "@apollo/client";
+import NoteFeed from "../components/NoteFeed";
+import { GET_MY_FAVORITES } from "../gql/query";
+
 
 export const Favorites = () => {
 
-    useEffect(() => {
-        document.title = 'Favorites — Notedly';
-    });
 
-    return (
-        <div>
-            <h1>Notedly</h1>
-            <p>These are my favorites</p>
-        </div>
-    ); };
+  useEffect(() => {
+    document.title = 'Favorites — Notedly';
+  });
+
+
+  const { loading, error, data } = useQuery(GET_MY_FAVORITES);
+
+  if (loading) return 'Loading...';
+
+  if (error) return `Error! ${error.message}`;
+
+
+  if (data.me.favorites.length !== 0) {
+    return <NoteFeed notes={data.me.favorites} />;
+  } else {
+    return <p>No favorites yet</p>;
+  }
+};

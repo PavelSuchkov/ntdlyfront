@@ -1,5 +1,5 @@
 import React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Navigation = () => {
@@ -31,6 +31,15 @@ export const Navigation = () => {
                 &nbsp;
               </span>
             Favorites</Link>
+        </li>
+        <li>
+
+          <Link to="/new">
+             <span aria-hidden="true" role="img">
+                ➕
+               &nbsp;
+            </span>
+            New</Link>
         </li>
       </NavList>
     </Nav>
