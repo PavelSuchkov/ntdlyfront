@@ -1,27 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "../components/Button";
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import NoteFeed from "../components/NoteFeed";
+import { GET_NOTES } from "../gql/query";
 
-const GET_NOTES = gql`
-  query noteFeed($cursor: String) {
-    noteFeed(cursor: $cursor) {
-      cursor
-      hasNextPage
-      notes {
-        id
-        createdAt
-        content
-        favoriteCount
-        author {
-          username
-          id
-          avatar
-        }
-      }
-    }
-  }
-`;
 
 export const Home = () => {
 
@@ -50,6 +32,10 @@ export const Home = () => {
 
       );
   };
+
+ useEffect(() => {
+   fetchMore(GET_NOTES)
+ }, [data])
 
   if (loading) return <p>Loading...</p>;
 

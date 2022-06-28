@@ -14,7 +14,6 @@ const Delete = props => {
     },
     refetchQueries: [{ query: GET_MY_NOTES, GET_NOTES }],
     onCompleted: data => {
-      // Перенаправляем пользователя на страницу "my notes"
       props.history.push('/mynotes');
     }
   });
