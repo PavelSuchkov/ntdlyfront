@@ -13,7 +13,6 @@ export const MyNotes = () => {
   if (loading) return 'Loading...';
   if (error) return `Error! ${error.message}`;
 
-  console.log(data);
 
   if (data.me.notes.length !== 0) {
     return <NoteFeed notes={data.me.notes} />;

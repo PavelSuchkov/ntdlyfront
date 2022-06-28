@@ -20,7 +20,6 @@ export const SignIn = (props) => {
   const [signIn, { loading, error }] = useMutation(SIGNIN_USER, {
     onCompleted: data => {
       // Сохраняем токен
-      console.log(data.error);
       localStorage.setItem('token', data.signIn);
       // Обновляем локальный кэш
       client.writeData({ data: { isLoggedIn: true } });

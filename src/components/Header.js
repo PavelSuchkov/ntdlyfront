@@ -14,7 +14,6 @@ const IS_LOGGED_IN = gql`
 
  const Header = (props) => {
 
-   // console.log('Headerprops ===>', props);
   const { data, client  } = useQuery(IS_LOGGED_IN);
 
   const onClick = () => {
