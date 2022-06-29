@@ -24,7 +24,6 @@ mutation newNote($content: String!) {
 export const NewNote = props => {
 
   const [data, { loading, error }] = useMutation(NEW_NOTE, {
-    // Повторно получаем запрос GET_NOTES, чтобы обновить кэш
     refetchQueries: [{ query: GET_NOTES }],
     onCompleted: data => {
       // В финале перенаправляем пользователя на страницу заметки
