@@ -7,9 +7,7 @@
     "dev": "parcel src/index.html",
     "final": "parcel final/index.html",
     "deploy:src": "parcel build src/index.html --public-url ./",
-    "deploy:final": "parcel build final/index.html --public-url ./",
-    "cy:run": "cypress run",
-    "cy:open": "cypress open"
+    "deploy:final": "parcel build final/index.html --public-url ./"
   },
   "repository": {
     "type": "git",
@@ -37,13 +35,11 @@
     "styled-components": "4.4.1"
   },
   "devDependencies": {
-    "@testing-library/cypress": "^5.3.1",
     "babel-core": "6.26.3",
     "babel-plugin-styled-components": "1.10.6",
     "babel-plugin-transform-object-rest-spread": "6.26.0",
     "babel-preset-env": "1.7.0",
     "babel-preset-react": "6.24.1",
-    "cypress": "^10.1.0",
     "eslint": "5.16.0",
     "eslint-config-prettier": "5.1.0",
     "eslint-plugin-cypress": "2.7.0",
