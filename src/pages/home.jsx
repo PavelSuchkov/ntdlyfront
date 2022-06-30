@@ -35,7 +35,7 @@ export const Home = () => {
 
  useEffect(() => {
    fetchMore(GET_NOTES)
- }, [data])
+ }, [])
 
   if (loading) return <p>Loading...</p>;
 
